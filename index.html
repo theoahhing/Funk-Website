@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vish Support</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;600;700&display=swap");
+    :root {
+      --green: #1a6b3c;
+      --green-dark: #14562f;
+      --white: #ffffff;
+      --light: #f6f8f7;
+      --text: #1b1f1d;
+      --muted: #6b7a72;
+      --bot: #e6e9ed;
+      --user: #2f7df6;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Manrope", "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f2f6f3 0%, #ffffff 100%);
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e9eeeb;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--green);
+      letter-spacing: 0.4px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--green); }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 20px 70px;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+    }
+    .hero h1 {
+      font-family: "Fraunces", "Manrope", serif;
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+    .cta {
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 14px 26px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .cta:hover { transform: translateY(-2px); background: var(--green-dark); }
+
+    .hero-card {
+      background: var(--white);
+      padding: 26px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eef2ef;
+    }
+    .hero-card h3 { color: var(--green); margin-bottom: 8px; }
+    .hero-card p { color: var(--muted); font-size: 0.98rem; }
+
+    .features {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 20px 90px;
+    }
+    .features h2 {
+      font-family: "Fraunces", "Manrope", serif;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature {
+      background: var(--white);
+      padding: 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eef2ef;
+    }
+    .feature h3 { margin-bottom: 10px; color: var(--green); }
+    .feature p { color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 26px 20px 80px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .chat-fab {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 16px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      z-index: 20;
+      transition: transform 0.2s ease, background 0.2s ease;
+      border: none;
+    }
+    .chat-fab:hover { transform: translateY(-2px); background: var(--green-dark); }
+
+    .chat-window {
+      position: fixed;
+      bottom: 90px;
+      right: 22px;
+      width: 400px;
+      height: 550px;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e8eeea;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 20;
+    }
+    .chat-window.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .chat-header {
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    .chat-close {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 18px 16px;
+      overflow-y: auto;
+      background: #f9fbfa;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .msg {
+      max-width: 78%;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .msg.user {
+      align-self: flex-end;
+      background: var(--user);
+      color: var(--white);
+      border-bottom-right-radius: 4px;
+    }
+    .msg.bot {
+      align-self: flex-start;
+      background: var(--bot);
+      color: #2a2f2b;
+      border-bottom-left-radius: 4px;
+    }
+    .typing {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .chat-input {
+      display: flex;
+      gap: 10px;
+      padding: 12px;
+      border-top: 1px solid #e4ebe6;
+      background: var(--white);
+    }
+    .chat-input input {
+      flex: 1;
+      border: 1px solid #dbe4de;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .chat-input button {
+      border: none;
+      background: var(--green);
+      color: var(--white);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .chat-input button:disabled {
+      background: #9fb3a6;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 70px; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .chat-window {
+        width: calc(100% - 24px);
+        right: 12px;
+        left: 12px;
+        height: 80vh;
+        bottom: 86px;
+      }
+      .chat-fab { right: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">FreshCart Support</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div>
+      <h1>Customer care that keeps your cart moving.</h1>
+      <p>
+        Our StoreBot is ready 24/7 to handle order issues, item questions,
+        and delivery updates so your customers feel supported instantly.
+      </p>
+      <button class="cta" id="heroChatBtn">Chat With Us</button>
+    </div>
+    <div class="hero-card" id="about">
+      <h3>Trusted by busy shoppers</h3>
+      <p>
+        Fast replies, clear next steps, and a seamless handoff to your store
+        team when customers need human help.
+      </p>
+    </div>
+  </section>
+
+  <section class="features" id="contact">
+    <h2>Why shoppers love StoreBot</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>24/7 Support</h3>
+        <p>Help is available any time, even during the late-night rush.</p>
+      </div>
+      <div class="feature">
+        <h3>Instant Resolution</h3>
+        <p>Customers get clear next steps, fast, without waiting on hold.</p>
+      </div>
+      <div class="feature">
+        <h3>Always Notified</h3>
+        <p>Store managers receive summaries as soon as issues are logged.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> FreshCart Grocery. All rights reserved.
+  </footer>
+
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>StoreBot</span>
+      <button class="chat-close" id="chatClose">&times;</button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <button class="chat-fab" id="chatFab" aria-label="Chat With Us">
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path d="M7.5 18.5 4 20V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Chat With Us</span>
+  </button>
+
+  <script>
+    const chatWindow = document.getElementById("chatWindow");
+    const chatFab = document.getElementById("chatFab");
+    const chatClose = document.getElementById("chatClose");
+    const heroChatBtn = document.getElementById("heroChatBtn");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    const conversation = [];
+
+    const openChat = () => {
+      chatWindow.classList.add("open");
+      chatInput.focus();
+    };
+
+    const closeChat = () => {
+      chatWindow.classList.remove("open");
+    };
+
+    chatFab.addEventListener("click", openChat);
+    heroChatBtn.addEventListener("click", openChat);
+    chatClose.addEventListener("click", closeChat);
+
+    const addMessage = (text, role) => {
+      const msg = document.createElement("div");
+      msg.className = `msg ${role}`;
+      msg.textContent = text;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const addTyping = () => {
+      const typing = document.createElement("div");
+      typing.className = "typing";
+      typing.id = "typing";
+      typing.textContent = "StoreBot is typing...";
+      chatMessages.appendChild(typing);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const removeTyping = () => {
+      const typing = document.getElementById("typing");
+      if (typing) typing.remove();
+    };
+
+    const sendMessage = async () => {
+      const text = chatInput.value.trim();
+      if (!text || sendBtn.disabled) return;
+
+      addMessage(text, "user");
+      conversation.push({ role: "user", content: text });
+      chatInput.value = "";
+
+      sendBtn.disabled = true;
+      addTyping();
+
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: conversation })
+        });
+
+        if (!response.ok) throw new Error("Request failed");
+
+        const data = await response.json();
+        const reply = data.reply || "Sorry, I couldn't generate a response.";
+        removeTyping();
+        addMessage(reply, "bot");
+        conversation.push({ role: "assistant", content: reply });
+      } catch (err) {
+        removeTyping();
+        addMessage("Sorry, something went wrong. Please try again in a moment.", "bot");
+      } finally {
+        sendBtn.disabled = false;
+      }
+    };
+
+    sendBtn.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
