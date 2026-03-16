@@ -1,8 +1,8 @@
-# Grocery Customer Service Chatbot
+# Grocery Customer Service For Funk's Produce
 
-A modern, responsive customer service chatbot website with a Node.js + Express backend, OpenAI integration, and email summaries via Nodemailer.
+A modern, customer service website with a Node.js + Express backend, OpenAI integration, and email summaries via Nodemailer.
 
-## Features
+## Future Features
 - Sticky navigation and hero CTA
 - Floating chat widget with typing indicator
 - GPT-4o powered customer service replies
@@ -15,7 +15,7 @@ A modern, responsive customer service chatbot website with a Node.js + Express b
    npm install
    ```
 
-2. Create your `.env` file (already included in this project). Update the values:
+2. Create `.env` file (already included in this project). Update the values:
    ```env
    OPENAI_API_KEY=your_openai_key_here
    STORE_OWNER_EMAIL=owner@store.com
