@@ -154,6 +154,17 @@
     }
     .chat-fab:hover { transform: translateY(-2px); background: var(--green-dark); }
 
+    .chat-fab.disabled {
+  background: #9fb3a6;       /* greyed out */
+  cursor: not-allowed;
+  opacity: 0.8;
+  pointer-events: none;      /* disables clicking */
+}
+
+.chat-fab.disabled:hover {
+  transform: none;
+  background: #9fb3a6;
+}
     .chat-window {
       position: fixed;
       bottom: 90px;
