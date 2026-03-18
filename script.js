@@ -5,7 +5,20 @@ const chatWindow = document.getElementById("chatWindow");
     const chatMessages = document.getElementById("chatMessages");
     const chatInput = document.getElementById("chatInput");
     const sendBtn = document.getElementById("sendBtn");
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabPanels = document.querySelectorAll(".tab-panel");
 
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.getAttribute("data-tab");
+
+    tabButtons.forEach((btn) => btn.classList.remove("active"));
+    tabPanels.forEach((panel) => panel.classList.remove("active"));
+
+    button.classList.add("active");
+    document.getElementById(target).classList.add("active");
+  });
+});
     const conversation = [];
 
     const openChat = () => {
