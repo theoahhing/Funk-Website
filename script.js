@@ -7,9 +7,37 @@ const chatWindow = document.getElementById("chatWindow");
     const sendBtn = document.getElementById("sendBtn");
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabPanels = document.querySelectorAll(".tab-panel");
+    const enquiryForm = document.getElementById("enquiryForm");
+
+if (enquiryForm) {
+  enquiryForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("enquiryName").value.trim();
+    const email = document.getElementById("enquiryEmail").value.trim();
+    const phone = document.getElementById("enquiryPhone").value.trim();
+    const subject = document.getElementById("enquirySubject").value.trim() || "General Enquiry";
+    const message = document.getElementById("enquiryMessage").value.trim();
+
+    const body =
+      `Name: ${name}
+      Email: ${email}
+      Phone: ${phone}
+
+      Enquiry:
+      ${message}`;
+
+    window.location.href =
+      `mailto:admin@funksproduce.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
 
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    
+    // Prevent disabled tabs from activating
+    if (button.classList.contains("disabled")) return;
+
     const target = button.getAttribute("data-tab");
 
     tabButtons.forEach((btn) => btn.classList.remove("active"));
