@@ -64,6 +64,15 @@ a {
   height: 60%;
 }
 
+.location-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: var(--shadow);
+}
+
 .nav-links {
   display: flex;
   gap: 50px;
@@ -492,6 +501,19 @@ footer {
   font-weight: 400;
 }
 
+.hours {
+  display: grid;
+  font-size: 1.05rem;
+  color: var(--muted);
+  grid-template-columns: 120px 1fr;
+  row-gap: 6px;
+  margin-bottom: 18px;
+}
+
+.hours div:nth-child(odd) {
+  font-weight: 600;
+}
+
 .join-note {
   background: #f6f8f7;
   border: 1px solid #e3ebe5;
@@ -567,6 +589,212 @@ footer {
   transform: translateY(-3px);
 }
 
+.inline-link {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   HOME PAGE - PRODUCTS SLIDER
+================================ */
+
+.product-slider-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.product-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  overflow: hidden;
+  background: #000;
+}
+
+.product-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease-in-out;
+}
+
+.product-slide {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+}
+
+.product-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 1;
+}
+
+.product-slide-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--white);
+}
+
+.product-slide-overlay h2 {
+  font-family: "Fraunces", "Manrope", serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.product-slide-overlay p {
+  max-width: 760px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.22);
+}
+
+.product-slide-btn {
+  margin-top: 8px;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.slider-arrow-left {
+  left: 24px;
+}
+
+.slider-arrow-right {
+  right: 24px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.slider-dot:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.slider-dot.active {
+  background: var(--white);
+  transform: scale(1.15);
+}
+
+/* ================================
+   HOME PAGE - OUR PROMISE
+================================ */
+
+.promise-section {
+  background: var(--white);
+  padding: 60px 20px; /* smaller = half feel of slider */
+  display: flex;
+  align-items: center;
+}
+
+.promise-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title */
+.promise-inner h2 {
+  font-family: "Fraunces", "Manrope", serif; /* matches your hero nicely */
+  font-size: clamp(2rem, 2.5vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.promise-inner h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--green);
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.promise-inner p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* Optional: nicer paragraph width rhythm */
+.promise-inner p:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================
+   MEDIA RESPONSE
+================================ */
+
 @media (max-width: 900px) {
   .form-row {
     grid-template-columns: 1fr;
@@ -605,5 +833,76 @@ footer {
 
   .chat-fab {
     right: 12px;
+  }
+}
+
+
+/* ================================
+   MEDIA RESPONSE - PRODUCTS SLIDER
+================================ */
+
+@media (max-width: 900px) {
+  .product-slider {
+    height: 340px;
+  }
+
+  .product-slide-overlay p {
+    max-width: 620px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-slider {
+    height: 300px;
+  }
+
+  .product-slide-overlay {
+    padding: 30px 18px 60px;
+  }
+
+  .product-slide-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .product-slide-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .slider-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
+  }
+
+  .slider-arrow-left {
+    left: 12px;
+  }
+
+  .slider-arrow-right {
+    right: 12px;
+  }
+
+  .slider-dots {
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .promise-section {
+    padding: 50px 20px;
+  }
+
+  .promise-inner {
+    text-align: left; /* optional – improves readability on mobile */
+  }
+
+  .promise-inner h2 {
+    text-align: center;
   }
 }
