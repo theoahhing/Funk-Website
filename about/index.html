@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+ <!-- Navigation Pane of Webpage -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="/">
@@ -21,18 +23,21 @@
     </div>
   </nav>
 
+ <!-- Body of Webpage -->
   <section class="info-section">
   <div class="info-layout">
     
+   <!-- Left Side Panel -->
     <div class="info-tabs">
-      <button class="tab-btn active" data-tab="about">About Us</button>
-      <button class="tab-btn" data-tab="promise">Our Promise</button>
-      <button class="tab-btn" data-tab="supply">Who We Supply</button>
+      <button class="tab-btn active" data-tab="our-story">Our Story</button>
+      <button class="tab-btn" data-tab="why-us">Why US</button>
     </div>
 
+   <!-- Right Side Panel -->
     <div class="info-content">
 
-      <div class="tab-panel active" id="about">
+     <!-- Our Story Content -->
+      <div class="tab-panel active" id="our-story">
         <h1>Funk's Produce</h1>
         <p>
           Funk's Produce was established in 2024 with a clear vision - to supply premium,
@@ -60,35 +65,48 @@
         <img src="/Images/FUNK ICON DARK (NO BACKING).PNG" class="image">
       </div>
 
-      <div class="tab-panel" id="promise">
-        <h1>Our Promise</h1>
+     <!-- Why Us Content -->
+      <div class="tab-panel" id="why-us">
+        <h1>Why Us</h1>
+        <h3>We Understand Your Kitchen</h3>
         <p>
-          We are committed to supplying fresh, premium-quality produce with consistency, reliability, and service that goes beyond expectation.
+          As a business owned and operated by a qualified chef, we understand the pressures, pace, and expectations of a working kitchen. 
+          From prep time to service demands, our approach is shaped by real industry experience — not just supply logistics.
         </p>
+
+        <h3>Consistent Quality You Can Rely On</h3>
         <p>
-          Our focus is not only on the produce itself, but on building trust with every customer through communication, responsiveness, and care.
+          We prioritise freshness and consistency across every order. Whether you're running a café, restaurant, or large-scale kitchen, 
+          you can expect produce that meets your standards every time.
+        </p>
+
+        <h3>Reliable, No-Fuss Service</h3>
+        <p>
+          We know how important timing is in hospitality. Orders are handled with care and delivered reliably, so you can focus on running 
+          your business without worrying about supply issues.
+        </p>
+
+        <h3>More Than Just a Supplier</h3>
+        <p>
+          We go beyond simply delivering produce. From practical advice on product selection to helping you make cost-effective decisions, 
+          we aim to support how your business operates day to day.
+        </p>
+
+        <h3>Built on Relationships</h3>
+        <p>
+          At Funk’s Produce, we value long-term relationships over one-off transactions. We take the time to understand your needs, 
+          your menu, and your workflow — so we can provide a service that genuinely supports your business.
         </p>
       </div>
-
-      <div class="tab-panel" id="supply">
-        <h1>Who We Supply</h1>
-        <p>
-          Funk's Produce proudly supplies a wide variety of clients including cafés, restaurants, schools, catering businesses,
-          retail outlets, and fellow wholesalers.
-        </p>
-        <p>
-          We understand that every customer operates differently, so we work closely with each client to provide produce solutions
-          that are practical, reliable, and tailored to their needs.
-        </p>
-      </div>
-
     </div>
   </div>
 </section>
 
+ <!-- Footer -->
   <footer>
     <p>&copy; <span id="year"></span> Funk's Produce. All rights reserved.</p>
 
+   <!-- Links to Funk's Produce Social Pages -->
     <div class="social-section">
       <p class="social-title">Follow Us</p>
       <div class="social-icons">
@@ -107,6 +125,7 @@
     </div>
   </footer>
 
+ <!-- Chat Window (Future Implementation) -->
   <div class="chat-window" id="chatWindow">
     <div class="chat-header">
       <span>Chat</span>
@@ -126,7 +145,7 @@
     <span>Unavailable</span>
   </button>
 
+ <!-- Runs JavaScipt -->
   <script src="/script.js"></script>
-  
 </body>
 </html>
