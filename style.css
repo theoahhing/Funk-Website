@@ -755,10 +755,10 @@ footer {
 }
 
 .product-slide-overlay p {
-  max-width: 760px;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  width: min(92%, 760px);
+  margin: 0 auto 16px;
+  font-size: clamp(0.88rem, 1.5vw, 1.1rem);
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.22);
 }
@@ -766,6 +766,7 @@ footer {
 .product-slide-btn {
   margin-top: 8px;
 }
+
 
 .slider-arrow {
   position: absolute;
@@ -1065,7 +1066,7 @@ footer {
   }
 
   .product-slider {
-    aspect-ratio: 4 / 1;
+    aspect-ratio: 4 / 1.5;
     height: auto;
   }
 
@@ -1082,21 +1083,23 @@ footer {
   }
 
   .product-slide-overlay {
-  padding: 16px 12px 50px;
-}
+    justify-content: flex-end;
+    padding: 14px 12px 42px;
+  }
 
-.product-slide-overlay h2 {
-  font-size: 1.3rem;
-  line-height: 1.1;
-  margin-bottom: 8px;
-}
+  .product-slide-overlay h2 {
+    max-width: 11ch;
+    margin-bottom: 8px;
+    font-size: clamp(1.15rem, 5vw, 1.45rem);
+    line-height: 1.08;
+  }
 
-.product-slide-overlay p {
-  font-size: 0.82rem;
-  line-height: 1.35;
-  margin-bottom: 10px;
-  max-width: 90%;
-}
+  .product-slide-overlay p {
+    width: min(92%, 320px);
+    margin-bottom: 10px;
+    font-size: clamp(0.78rem, 2.8vw, 0.9rem);
+    line-height: 1.35;
+  }
 
   .slider-arrow {
     width: 36px;
