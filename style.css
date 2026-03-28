@@ -77,7 +77,7 @@ a {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e9eeeb;
@@ -88,15 +88,25 @@ a {
   align-items: center;
   justify-content: space-between;
   max-width: 1100px;
-  max-height: 120px;
   margin: 0 auto;
   padding: 8px 20px;
+  gap: 20px;
 }
 
-.nav-inner > a {
+.nav-brand {
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
+}
+
+.logo {
+  display: block;
+  width: clamp(140px, 18vw, 220px);
+  height: auto;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 .nav-links {
@@ -111,15 +121,21 @@ a {
   color: var(--green);
 }
 
-.mobile-menu {
-  display: none;
-}
-
-.mobile-menu.active {
-  display: flex;
-}
-
 .menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 8px 10px;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mobile-menu {
   display: none;
 }
 
@@ -986,9 +1002,6 @@ footer {
 @media (max-width: 768px) {
   .nav-inner {
     padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 12px;
   }
 
@@ -998,27 +1011,16 @@ footer {
 
   .menu-toggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    padding: 8px 10px;
-    border: none;
-    background: none;
-    color: var(--text);
-    font-size: 1.8rem;
-    line-height: 1;
-    cursor: pointer;
   }
 
   .logo {
     width: clamp(120px, 36vw, 170px);
-    height: auto;
   }
 
   .mobile-menu {
     display: none;
     flex-direction: column;
-    gap: 0;
+    width: 100%;
     padding: 0 16px 16px;
     background: rgba(255, 255, 255, 0.98);
     border-top: 1px solid #e9eeeb;
@@ -1118,5 +1120,18 @@ footer {
 
   .promise-inner h2 {
     text-align: center;
+  }
+
+  .info-section {
+    padding: 30px 16px 60px;
+  }
+
+  .info-content {
+    padding: 22px 18px;
+  }
+
+  .hours {
+    grid-template-columns: 100px 1fr;
+    font-size: 1rem;
   }
 }

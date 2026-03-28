@@ -24,13 +24,25 @@ const mobileMenu   = document.getElementById("mobileMenu");
 
 if (menuToggle && mobileMenu) {
   menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+    const isOpen = mobileMenu.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menuToggle.textContent = isOpen ? "✕" : "☰";
   });
 
   mobileMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
     });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      mobileMenu.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    }
   });
 }
 
