@@ -15,6 +15,24 @@ const tabPanels    = document.querySelectorAll(".tab-panel");
 
 const enquiryForm  = document.getElementById("enquiryForm");
 
+const menuToggle   = document.getElementById("menuToggle");
+const mobileMenu   = document.getElementById("mobileMenu");
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  });
+}
 
 /* =====================================================
    CONTACT PAGE - ENQUIRY FORM
