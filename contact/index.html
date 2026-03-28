@@ -3,14 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <!-- Title & Image displayed in Explorer Tabs -->
   <title>Funk Produce</title>
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
+
+ <!-- Runs CSS Script -->
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+ <!-- Navigation Pane of Webpage -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="/">
-        <img src="/Images/Funk-Logos/ MAIN LOGO DARK (NO BACKING).PNG" class="logo">
+        <img src="/Images/Funk-Logos/FUNK MAIN LOGO DARK (NO BACKING).PNG" class="logo">
       </a>
       <div class="nav-links">
         <a href="/">Home</a>
@@ -21,197 +28,202 @@
     </div>
   </nav>
 
+ <!-- Body of Webpage -->
   <section class="info-section">
-  <div class="info-layout">
+    <div class="info-layout">
 
-    <div class="info-tabs">
-      <button class="tab-btn active" data-tab="contact-details">Contact Details</button>
-      <button class="tab-btn" data-tab="faqs">FAQs</button>
-      <button class="tab-btn" data-tab="enquiries">Enquiries</button>
-      <button class="tab-btn disabled" data-tab="join-us" disabled>
-        Join Us <span class="coming-soon">Coming Soon</span>
-      </button>
-    </div>
+     <!-- Left Side Panel -->
+      <div class="info-tabs">
+        <button class="tab-btn active" data-tab="contact-details">Contact Details</button>
+        <button class="tab-btn" data-tab="faqs">FAQs</button>
+        <button class="tab-btn" data-tab="enquiries">Enquiries</button>
+        <button class="tab-btn disabled" data-tab="join-us" disabled>
+          Join Us <span class="coming-soon">Coming Soon</span>
+        </button>
+      </div>
 
-    <div class="info-content">
+     <!-- Right Side Panel -->
+      <div class="info-content">
 
-     <!-- Contacts Tab -->
-      <div class="tab-panel active" id="contact-details">
-        <h1>Business Details</h1>
+       <!-- Contacts -->
+        <div class="tab-panel active" id="contact-details">
+          <h1>Business Details</h1>
 
-        <h3>Location</h3>
-        <p>
-          385 Sherwood Road<br>
-          Rocklea QLD 4106
-        </p>
+          <h3>Location</h3>
+          <p>
+            385 Sherwood Road<br>
+            Rocklea QLD 4106
+          </p>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=385+Sherwood+Road+Rocklea+QLD" target="_blank" rel="noopener noreferrer">
-          <img src="/Images/Contact-Page/locationSnippet.jpg" alt="Funk's Produce Location" class="location-image">
-        </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=385+Sherwood+Road+Rocklea+QLD" target="_blank" rel="noopener noreferrer">
+            <img src="/Images/Contact-Page/locationSnippet.jpg" alt="Funk's Produce Location" class="location-image">
+          </a>
 
-        <h3>Hours <span class="muted-inline">(May differ on public holidays)</span></h3>
-        <div class="hours">
-          <div>Sunday:</div><div>2am - 6pm</div>
-          <div>Monday:</div><div>2am - 6pm</div>
-          <div>Tuesday:</div><div>2am - 6pm</div>
-          <div>Wednesday:</div><div>2am - 6pm</div>
-          <div>Thursday:</div><div>4am - 6pm</div>
-          <div>Friday:</div><div>2am - 6pm</div>
-          <div>Saturday:</div><div>2am - 6pm</div>
+          <h3>Hours <span class="muted-inline">(May differ on public holidays)</span></h3>
+          <div class="hours">
+            <div>Sunday:</div><div>2am - 6pm</div>
+            <div>Monday:</div><div>2am - 6pm</div>
+            <div>Tuesday:</div><div>2am - 6pm</div>
+            <div>Wednesday:</div><div>2am - 6pm</div>
+            <div>Thursday:</div><div>4am - 6pm</div>
+            <div>Friday:</div><div>2am - 6pm</div>
+            <div>Saturday:</div><div>2am - 6pm</div>
+          </div>
+
+          <h3>Contact</h3>
+          <p>
+            P: <a href="tel:0735222912">(07) 3522 2912</a><br>
+            E: <a href="mailto:admin@funksproduce.com">admin@funksproduce.com</a>
+          </p>
+        </div>
+        
+       <!-- FAQs -->
+        <div class="tab-panel" id="faqs">
+          <h1>FAQs</h1>
+          <h3>What areas do you supply?</h3>
+          <p>We currently supply businesses across Brisbane's central district and surrounding areas, with the flexibility
+            to service the wider region of Greater Brisbane. Feel free to contact us or send an enquiry at your convenience
+            to discuss your requirements.
+          </p>
+
+          <h3>What types of businesses do you supply?</h3>
+          <p>The main types of businesses we supply across Brisbane include:<br>
+            - Schools<br>
+            - Childcare Services<br>
+            - Aged Care Services<br>
+            - Hospitals<br>
+            - Cafés<br>
+            - Restaurants<br>
+            - Bars<br>
+            - Catering Companies<br>
+          </p>
+
+          <h3>How do I place an order?</h3>
+          <p>Orders can be placed through the
+            <a href="https://www.fresho.com/suppliers/funks-produce" class="inline-link" target="_blank" rel="noopener noreferrer">
+              Fresho
+            </a> Platform.
+          </p>
+
+          <h3>What makes Funk's Produce different?</h3>
+          <p>At Funk's Produce, we go beyond simply supplying fresh produce. Owned and operated by a qualified chef,
+            we understand the day-to-day realities of commercial kitchens and food service environments.<br><br>
+
+            From offering practical advice on product selection, handling, and cost-effective use, to personally delivering
+            orders, Jacob has built a hands-on approach focused on supporting how your business operates - not just what it
+            needs.<br><br>
+            
+            His vision is to build genuine relationships with customers through a shared passion for food, delivering
+            consistent quality, reliable service, and a level of care that goes beyond a typical wholesaler.
+          </p>
         </div>
 
-        <h3>Contact</h3>
-        <p>
-          P: <a href="tel:0735222912">(07) 3522 2912</a><br>
-          E: <a href="mailto:admin@funksproduce.com">admin@funksproduce.com</a>
-        </p>
+       <!-- Enquiries -->
+        <div class="tab-panel" id="enquiries">
+          <h1>Enquiries</h1>
+          <p>Please fill out the form below and we’ll get back to you as soon as possible.</p>
+
+          <form class="contact-form" id="enquiryForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="enquiryName">Name</label>
+                <input type="text" id="enquiryName" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="enquiryEmail">Email</label>
+                <input type="email" id="enquiryEmail" name="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="enquiryPhone">Phone No.</label>
+                <input type="tel" id="enquiryPhone" name="phone">
+              </div>
+
+              <div class="form-group">
+                <label for="enquirySubject">Subject</label>
+                <input type="text" id="enquirySubject" name="subject" placeholder="General enquiry">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="enquiryMessage">Your Enquiry</label>
+              <textarea id="enquiryMessage" name="message" rows="7" required></textarea>
+            </div>
+
+            <button type="submit" class="cta">Send Enquiry</button>
+          </form>
+        </div>
+
+       <!-- Join Us Tab (Requires dynamic website features - Future Implementation) -->
+        <div class="tab-panel" id="join-us">
+          <h1>Join Us</h1>
+          <p>
+            Interested in working with Funk’s Produce? Submit your details below.
+          </p>
+          <p class="join-note">
+            Note: resume and cover letter uploads require a form service or backend to send properly.
+            For now, applicants can email their documents directly to
+            <a href="mailto:admin@funksproduce.com">admin@funksproduce.com</a>.
+          </p>
+
+          <form class="contact-form" id="joinForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="joinName">Full Name</label>
+                <input type="text" id="joinName" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="joinEmail">Email</label>
+                <input type="email" id="joinEmail" name="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="joinPhone">Phone No.</label>
+                <input type="tel" id="joinPhone" name="phone">
+              </div>
+
+              <div class="form-group">
+                <label for="joinRole">Position of Interest</label>
+                <input type="text" id="joinRole" name="role" placeholder="e.g. Driver, Warehouse, Sales">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="joinMessage">Message</label>
+              <textarea id="joinMessage" name="message" rows="6" placeholder="Tell us a little about yourself"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resumeFile">Resume</label>
+                <input type="file" id="resumeFile" name="resume" accept=".pdf,.doc,.docx">
+              </div>
+
+              <div class="form-group">
+                <label for="coverLetterFile">Cover Letter</label>
+                <input type="file" id="coverLetterFile" name="coverLetter" accept=".pdf,.doc,.docx">
+              </div>
+            </div>
+
+            <button type="button" class="cta" id="joinEmailBtn">Email Application</button>
+          </form>
+        </div>
+
       </div>
-      
-     <!-- FAQs Tab -->
-      <div class="tab-panel" id="faqs">
-        <h1>FAQs</h1>
-        <h3>What areas do you supply?</h3>
-        <p>We currently supply businesses across Brisbane's central district and surrounding areas, with the flexibility
-          to service the wider region of Greater Brisbane. Feel free to contact us or send an enquiry at your convenience
-          to discuss your requirements.
-        </p>
-
-        <h3>What types of businesses do you supply?</h3>
-        <p>The main types of businesses we supply across Brisbane include:<br>
-          - Schools<br>
-          - Childcare Services<br>
-          - Aged Care Services<br>
-          - Hospitals<br>
-          - Cafés<br>
-          - Restaurants<br>
-          - Bars<br>
-          - Catering Companies<br>
-        </p>
-
-        <h3>How do I place an order?</h3>
-        <p>Orders can be placed through the
-          <a href="https://www.fresho.com/suppliers/funks-produce" class="inline-link" target="_blank" rel="noopener noreferrer">
-            Fresho
-          </a> Platform.
-        </p>
-
-        <h3>What makes Funk's Produce different?</h3>
-        <p>At Funk's Produce, we go beyond simply supplying fresh produce. Owned and operated by a qualified chef,
-          we understand the day-to-day realities of commercial kitchens and food service environments.<br><br>
-
-          From offering practical advice on product selection, handling, and cost-effective use, to personally delivering
-          orders, Jacob has built a hands-on approach focused on supporting how your business operates - not just what it
-          needs.<br><br>
-          
-          His vision is to build genuine relationships with customers through a shared passion for food, delivering
-          consistent quality, reliable service, and a level of care that goes beyond a typical wholesaler.
-        </p>
-      </div>
-
-     <!-- Enquiries Tab -->
-      <div class="tab-panel" id="enquiries">
-        <h1>Enquiries</h1>
-        <p>Please fill out the form below and we’ll get back to you as soon as possible.</p>
-
-        <form class="contact-form" id="enquiryForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="enquiryName">Name</label>
-              <input type="text" id="enquiryName" name="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="enquiryEmail">Email</label>
-              <input type="email" id="enquiryEmail" name="email" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="enquiryPhone">Phone No.</label>
-              <input type="tel" id="enquiryPhone" name="phone">
-            </div>
-
-            <div class="form-group">
-              <label for="enquirySubject">Subject</label>
-              <input type="text" id="enquirySubject" name="subject" placeholder="General enquiry">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="enquiryMessage">Your Enquiry</label>
-            <textarea id="enquiryMessage" name="message" rows="7" required></textarea>
-          </div>
-
-          <button type="submit" class="cta">Send Enquiry</button>
-        </form>
-      </div>
-
-     <!-- Join Us Tab (Requires dynamic website features - Future Implementation)-->
-      <div class="tab-panel" id="join-us">
-        <h1>Join Us</h1>
-        <p>
-          Interested in working with Funk’s Produce? Submit your details below.
-        </p>
-        <p class="join-note">
-          Note: resume and cover letter uploads require a form service or backend to send properly.
-          For now, applicants can email their documents directly to
-          <a href="mailto:admin@funksproduce.com">admin@funksproduce.com</a>.
-        </p>
-
-        <form class="contact-form" id="joinForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="joinName">Full Name</label>
-              <input type="text" id="joinName" name="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="joinEmail">Email</label>
-              <input type="email" id="joinEmail" name="email" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="joinPhone">Phone No.</label>
-              <input type="tel" id="joinPhone" name="phone">
-            </div>
-
-            <div class="form-group">
-              <label for="joinRole">Position of Interest</label>
-              <input type="text" id="joinRole" name="role" placeholder="e.g. Driver, Warehouse, Sales">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="joinMessage">Message</label>
-            <textarea id="joinMessage" name="message" rows="6" placeholder="Tell us a little about yourself"></textarea>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="resumeFile">Resume</label>
-              <input type="file" id="resumeFile" name="resume" accept=".pdf,.doc,.docx">
-            </div>
-
-            <div class="form-group">
-              <label for="coverLetterFile">Cover Letter</label>
-              <input type="file" id="coverLetterFile" name="coverLetter" accept=".pdf,.doc,.docx">
-            </div>
-          </div>
-
-          <button type="button" class="cta" id="joinEmailBtn">Email Application</button>
-        </form>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
+ <!-- Footer/Bottom of Webpage -->
   <footer>
     <p>&copy; <span id="year"></span> Funk's Produce. All rights reserved.</p>
 
+   <!-- Links to Funk's Produce Social Pages -->
     <div class="social-section">
       <p class="social-title">Follow Us</p>
       <div class="social-icons">
@@ -230,6 +242,7 @@
     </div>
   </footer>
 
+ <!-- Chat Window (Future Implementation) -->
   <div class="chat-window" id="chatWindow">
     <div class="chat-header">
       <span>Chat</span>
@@ -249,6 +262,7 @@
     <span>Unavailable</span>
   </button>
 
+ <!-- Runs JavaScipt -->
   <script src="/script.js"></script>
 </body>
 </html>

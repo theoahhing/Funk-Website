@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <!-- Title & Image displayed in Explorer Tabs -->
   <title>Funk Produce</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+
+ <!-- Runs CSS Script -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +17,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/">
-        <img src="Images/Funk-Logos/ MAIN LOGO DARK (NO BACKING).PNG" class="logo">
+        <img src="Images/Funk-Logos/FUNK MAIN LOGO DARK (NO BACKING).PNG" class="logo">
       </a>
       <div class="nav-links">
         <a href="/">Home</a>
@@ -62,89 +67,89 @@
     </div>
   </section>
 
-  <!-- Section 2 -->
+ <!-- Section 2 -->
   <section class="product-slider-section">
-  <div class="product-slider">
+    <div class="product-slider">
 
-   <!-- First Slide of Section 2 -->
-    <div class="product-slider-track" id="productSliderTrack">
-      <div class="product-slide">
-        <img src="Images/Main-Page/produce.jpg" alt="Our Products">
-        <div class="product-slide-overlay">
-          <h2>Our Products</h2>
-          <p>
-            Explore our range of quality wholesale goods, from fresh produce to essential kitchen staples.
-          </p>
-          <a href="/products/" class="cta product-slide-btn">View Products</a>
+     <!-- First Slide of Section 2 -->
+      <div class="product-slider-track" id="productSliderTrack">
+        <div class="product-slide">
+          <img src="Images/Main-Page/produce.jpg" alt="Our Products">
+          <div class="product-slide-overlay">
+            <h2>Our Products</h2>
+            <p>
+              Explore our range of quality wholesale goods, from fresh produce to essential kitchen staples.
+            </p>
+            <a href="/products/" class="cta product-slide-btn">View Products</a>
+          </div>
+        </div>
+
+       <!-- Second Slide of Section 2 -->
+        <div class="product-slide">
+          <img src="Images/Main-Page/fruit-veggies.jpg" alt="Fruit and Vegetables">
+          <div class="product-slide-overlay">
+            <h2>Fruit & Vegetables</h2>
+            <p>
+              Fresh, reliable produce selected to support kitchens, cafés, restaurants, and local businesses.
+            </p>
+          </div>
+        </div>
+
+       <!-- Third Slide of Section 2 -->
+        <div class="product-slide">
+          <img src="Images/Main-Page/eggs.jpg" alt="Eggs and Dairy">
+          <div class="product-slide-overlay">
+            <h2>Eggs & Dairy</h2>
+            <p>
+              Everyday essentials supplied with consistency, quality, and dependable service.
+            </p>
+          </div>
+        </div>
+
+       <!-- Fourth Slide of Section 2 -->
+        <div class="product-slide">
+          <img src="Images/Main-Page/juice.jpg" alt="Beverages">
+          <div class="product-slide-overlay">
+            <h2>Beverages</h2>
+            <p>
+              A practical range of drinks to help keep your shelves, kitchens, and teams stocked.
+            </p>
+          </div>
+        </div>
+
+       <!-- Fifth Slide of Section 2 -->
+        <div class="product-slide">
+          <img src="Images/Main-Page/oil.jpg" alt="Cooking Oils">
+          <div class="product-slide-overlay">
+            <h2>Cooking Oils</h2>
+            <p>
+              Quality cooking oils and kitchen essentials delivered alongside the products your business already needs.
+            </p>
+          </div>
         </div>
       </div>
 
-     <!-- Second Slide of Section 2 -->
-      <div class="product-slide">
-        <img src="Images/Main-Page/fruit-veggies.jpg" alt="Fruit and Vegetables">
-        <div class="product-slide-overlay">
-          <h2>Fruit & Vegetables</h2>
-          <p>
-            Fresh, reliable produce selected to support kitchens, cafés, restaurants, and local businesses.
-          </p>
-        </div>
-      </div>
+     <!-- Arrows for Slideshow -->
+      <button class="slider-arrow slider-arrow-left" id="sliderPrev" aria-label="Previous slide">
+        &#10094;
+      </button>
+      <button class="slider-arrow slider-arrow-right" id="sliderNext" aria-label="Next slide">
+        &#10095;
+      </button>
 
-     <!-- Third Slide of Section 2 -->
-      <div class="product-slide">
-        <img src="Images/Main-Page/eggs.jpg" alt="Eggs and Dairy">
-        <div class="product-slide-overlay">
-          <h2>Eggs & Dairy</h2>
-          <p>
-            Everyday essentials supplied with consistency, quality, and dependable service.
-          </p>
-        </div>
-      </div>
-
-     <!-- Fourth Slide of Section 2 -->
-      <div class="product-slide">
-        <img src="Images/Main-Page/juice.jpg" alt="Beverages">
-        <div class="product-slide-overlay">
-          <h2>Beverages</h2>
-          <p>
-            A practical range of drinks to help keep your shelves, kitchens, and teams stocked.
-          </p>
-        </div>
-      </div>
-
-     <!-- Fifth Slide of Section 2 -->
-      <div class="product-slide">
-        <img src="Images/Main-Page/oil.jpg" alt="Cooking Oils">
-        <div class="product-slide-overlay">
-          <h2>Cooking Oils</h2>
-          <p>
-            Quality cooking oils and kitchen essentials delivered alongside the products your business already needs.
-          </p>
-        </div>
+     <!-- Dots -->
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" aria-label="Go to slide 1"></button>
+        <button class="slider-dot" aria-label="Go to slide 2"></button>
+        <button class="slider-dot" aria-label="Go to slide 3"></button>
+        <button class="slider-dot" aria-label="Go to slide 4"></button>
+        <button class="slider-dot" aria-label="Go to slide 5"></button>
       </div>
     </div>
+  </section>
 
-   <!-- Arrows for Slideshow -->
-    <button class="slider-arrow slider-arrow-left" id="sliderPrev" aria-label="Previous slide">
-      &#10094;
-    </button>
-    <button class="slider-arrow slider-arrow-right" id="sliderNext" aria-label="Next slide">
-      &#10095;
-    </button>
-
-   <!-- Dots -->
-    <div class="slider-dots" id="sliderDots">
-      <button class="slider-dot active" aria-label="Go to slide 1"></button>
-      <button class="slider-dot" aria-label="Go to slide 2"></button>
-      <button class="slider-dot" aria-label="Go to slide 3"></button>
-      <button class="slider-dot" aria-label="Go to slide 4"></button>
-      <button class="slider-dot" aria-label="Go to slide 5"></button>
-    </div>
-  </div>
-</section>
-
-  <!-- Section 3 -->
-   <section class="promise-section">
+ <!-- Section 3 -->
+  <section class="promise-section">
     <div class="promise-inner">
       <h2>Our Promise</h2>
       <p>
@@ -156,10 +161,11 @@
     </div>
   </section>
 
- <!-- Footer -->
+ <!-- Footer/Bottom of Webpage -->
   <footer>
     <p>&copy; <span id="year"></span> Funk's Produce. All rights reserved.</p>
 
+   <!-- Links to Funk's Produce Social Pages -->
     <div class="social-section">
       <p class="social-title">Follow Us</p>
       <div class="social-icons">
@@ -178,7 +184,7 @@
     </div>
   </footer>
 
- <!-- Chat Window (Future) -->
+ <!-- Chat Window (Future Implementation) -->
   <div class="chat-window" id="chatWindow">
     <div class="chat-header">
       <span>Chat</span>
