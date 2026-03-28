@@ -133,7 +133,85 @@ if (sendBtn) {
 
 if (chatInput) {
   chatInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") sendMessage();
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+}
+
+/* ================================
+   HOME PAGE - PRODUCT SLIDER
+================================ */
+
+const sliderTrack = document.getElementById("productSliderTrack");
+const slides = document.querySelectorAll(".product-slide");
+const dots = document.querySelectorAll(".slider-dot");
+const prevBtn = document.getElementById("sliderPrev");
+const nextBtn = document.getElementById("sliderNext");
+
+let currentSlide = 0;
+let slideInterval;
+
+const updateDots = (index) => {
+  dots.forEach((dot) => dot.classList.remove("active"));
+  if (dots[index]) {
+    dots[index].classList.add("active");
+  }
+};
+
+const showSlide = (index) => {
+  if (!sliderTrack || !slides.length) return;
+
+  sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+  currentSlide = index;
+  updateDots(index);
+};
+
+const nextSlide = () => {
+  const newIndex = (currentSlide + 1) % slides.length;
+  showSlide(newIndex);
+};
+
+const prevSlide = () => {
+  const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(newIndex);
+};
+
+const startSlider = () => {
+  if (slides.length > 1) {
+    slideInterval = setInterval(nextSlide, 6000);
+  }
+};
+
+const resetSliderInterval = () => {
+  clearInterval(slideInterval);
+  startSlider();
+};
+
+if (sliderTrack && slides.length && dots.length) {
+  showSlide(0);
+  startSlider();
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetSliderInterval();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      resetSliderInterval();
+    });
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      resetSliderInterval();
+    });
   });
 }
 
