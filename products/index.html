@@ -16,7 +16,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/">
-        <img src="/Images/FUNK MAIN LOGO DARK (NO BACKING).PNG" class="logo">
+        <img src="/Images/Funk-Logos/ MAIN LOGO DARK (NO BACKING).PNG" class="logo">
       </a>
       <div class="nav-links">
         <a href="/">Home</a>
@@ -33,57 +33,155 @@
 
      <!-- Left Side Panel -->
       <div class="info-tabs">
-        <button class="tab-btn active" data-tab="fruit-veggies">Fruit & Vegetables</button>
-        <button class="tab-btn" data-tab="eggs-dairy">Eggs & Dairy</button>
-        <button class="tab-btn" data-tab="beverages">Beverages</button>
-        <button class="tab-btn" data-tab="oils">Cooking Oils</button>
+        <button type="button" class="tab-btn active" data-tab="fruit-veggies">Fruit & Vegetables</button>
+        <button type="button" class="tab-btn" data-tab="eggs-dairy">Eggs & Dairy</button>
+        <button type="button" class="tab-btn" data-tab="beverages">Beverages</button>
+        <button type="button" class="tab-btn" data-tab="oils">Cooking Oils</button>
       </div>
 
      <!-- Right Side Panel -->
       <div class="info-content">
+
+       <!-- Fruit & Vegetables -->
         <div class="tab-panel active" id="fruit-veggies">
           <h1>Fruit & Vegetables</h1>
-          <h2>Fruit</h2>
-          <p>
-            - Apples<br>
-            - Bananas<br>
-            - Orange<br>
-          </p><br>
-          <h2>Vegetables</h2>
-          <p>
-            - Carrot<br>
-            - Peas<br>
-            - Corn<br>
-          </p><br>
+          <p class="products-intro">Select a product to view available types, packaging, and pricing.</p>
+
+          <div class="product-grid">
+            <button type="button" class="product-card active" data-product="apples">Apples</button>
+            <button type="button" class="product-card" data-product="bananas">Bananas</button>
+            <button type="button" class="product-card" data-product="oranges">Oranges</button>
+            <button type="button" class="product-card" data-product="carrots">Carrots</button>
+            <button type="button" class="product-card" data-product="peas">Peas</button>
+            <button type="button" class="product-card" data-product="corn">Corn</button>
+          </div>
+
+          <div class="product-detail active" id="apples">
+            <h2>Apples</h2>
+            <p><strong>Types:</strong> Royal Gala, Pink Lady, Granny Smith</p>
+            <p><strong>Packaging:</strong> Loose box, tray pack, 12 count, 24 count</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="bananas">
+            <h2>Bananas</h2>
+            <p><strong>Types:</strong> Cavendish</p>
+            <p><strong>Packaging:</strong> Full carton, half carton, loose bunches</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="oranges">
+            <h2>Oranges</h2>
+            <p><strong>Types:</strong> Valencia, Navel</p>
+            <p><strong>Packaging:</strong> Tray, 12 count, 24 count, full carton</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="carrots">
+            <h2>Carrots</h2>
+            <p><strong>Types:</strong> Standard, baby carrots</p>
+            <p><strong>Packaging:</strong> 1kg bag, 5kg bag, full crate</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="peas">
+            <h2>Peas</h2>
+            <p><strong>Types:</strong> Green peas, snow peas, sugar snap peas</p>
+            <p><strong>Packaging:</strong> 250g punnet, 500g bag, tray</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="corn">
+            <h2>Corn</h2>
+            <p><strong>Types:</strong> Sweet corn</p>
+            <p><strong>Packaging:</strong> Individual, tray, carton</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
         </div>
+
+       <!-- Eggs & Dairy -->
         <div class="tab-panel" id="eggs-dairy">
           <h1>Eggs & Dairy</h1>
-          <h2>Eggs</h2>
-          <p>
-            - Pack of 12<br>
-            - Tray of 9 Packs<br>
-            - Carton of 4 Trays<br>
-          </p><br>
-          <h2>Dairy (Coming Soon)</h2>
-          <p>
-            - Milk (1/9)<br>
-            - Cheese (5/10)<br>
-          </p><br>
+          <p class="products-intro">Select a product to view available types, packaging, and pricing.</p>
+
+          <div class="product-grid">
+            <button type="button" class="product-card active" data-product="eggs">Eggs</button>
+            <button type="button" class="product-card" data-product="milk">Milk</button>
+            <button type="button" class="product-card" data-product="cheese">Cheese</button>
+          </div>
+
+          <div class="product-detail active" id="eggs">
+            <h2>Eggs</h2>
+            <p><strong>Types:</strong> Standard eggs</p>
+            <p><strong>Packaging:</strong> Pack of 12, tray of 9 packs, carton of 4 trays</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="milk">
+            <h2>Milk</h2>
+            <p><strong>Types:</strong> Full cream, light milk</p>
+            <p><strong>Packaging:</strong> 1L, 2L</p>
+            <p><strong>Pricing:</strong> Coming soon</p>
+          </div>
+
+          <div class="product-detail" id="cheese">
+            <h2>Cheese</h2>
+            <p><strong>Types:</strong> Sliced, shredded, block</p>
+            <p><strong>Packaging:</strong> 1kg, 2kg, 5kg</p>
+            <p><strong>Pricing:</strong> Coming soon</p>
+          </div>
         </div>
+
+       <!-- Beverages -->
         <div class="tab-panel" id="beverages">
           <h1>Beverages</h1>
-          <p>
-            - Water<br>
-            - Juice<br>
-          </p><br>
+          <p class="products-intro">Select a product to view available types, packaging, and pricing.</p>
+
+          <div class="product-grid">
+            <button type="button" class="product-card active" data-product="water">Water</button>
+            <button type="button" class="product-card" data-product="juice">Juice</button>
+          </div>
+
+          <div class="product-detail active" id="water">
+            <h2>Water</h2>
+            <p><strong>Types:</strong> Still water</p>
+            <p><strong>Packaging:</strong> Individual bottles, 24 pack, carton</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="juice">
+            <h2>Juice</h2>
+            <p><strong>Types:</strong> Orange, apple, mixed fruit</p>
+            <p><strong>Packaging:</strong> Individual bottle, 12 pack, carton</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
         </div>
+
+       <!-- Cooking Oils -->
         <div class="tab-panel" id="oils">
           <h1>Oils</h1>
-          <p>
-            - Vegetables Oil<br>
-            - Canola Oil<br>
-          </p><br>
+          <p class="products-intro">Select a product to view available types, packaging, and pricing.</p>
+          
+          <div class="product-grid">
+            <button type="button" class="product-card active" data-product="vegetable-oil">Vegetable Oil</button>
+            <button type="button" class="product-card" data-product="canola-oil">Canola Oil</button>
+          </div>
+
+          <div class="product-detail active" id="vegetable-oil">
+            <h2>Vegetable Oil</h2>
+            <p><strong>Types:</strong> Standard cooking oil</p>
+            <p><strong>Packaging:</strong> 2L, 5L, 20L</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
+
+          <div class="product-detail" id="canola-oil">
+            <h2>Canola Oil</h2>
+            <p><strong>Types:</strong> Standard cooking oil</p>
+            <p><strong>Packaging:</strong> 2L, 5L, 20L</p>
+            <p><strong>Pricing:</strong> Pricing available on request and may vary with market supply.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
