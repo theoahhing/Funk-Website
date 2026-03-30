@@ -16,17 +16,29 @@
  <!-- Navigation Pane of Webpage -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/">
-        <img src="/Images/Funk-Logos/FUNK MAIN LOGO DARK (NO BACKING).PNG" class="logo">
+      <a href="/" class="nav-brand">
+        <img src="Images/Funk-Logos/FUNK MAIN LOGO DARK (NO BACKING).PNG" class="logo" alt="Funk's Produce logo">
       </a>
+
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/products/">Products</a>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </div>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        ☰
+      </button>
     </div>
-  </nav> 
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/products/">Products</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
 
  <!-- Body of Webpage -->
   <section class="info-section">
